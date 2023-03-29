@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+ <h3>Items</h3>
+        <br>
+
+        {% if inventory_list %}
+        <table>
+            <tr>
+                <th>Accessory</th>
+                <th>Quantity Ordered</th>
+                <th>Quantity Remaining</th>
+                <th>Vendor Name</th>
+                <th>Cost price</th>
+                <th>Selling Price</th>
+            </tr>
+            {% for item in inventory_list %}
+                <tr>
+                    <td>{{ item.accessory }}</td>
+                    <td>{{ item.quantordered }}</td>
+                    <td>{{ item.quantremaining }}</td>
+                    <td>{{ item.vendorname }}</td>
+                    <td>{{ item.cpitem }}</td>
+                    <td>{{ item.spitem }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No Items yet. Add one above.</p>
+    {% endif %}
+    </div>
+</body>
+</html>
